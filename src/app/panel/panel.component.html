@@ -1,0 +1,20 @@
+<div class="container p-3 my-2 bg-dark text-white">
+  <div>
+    <h1 class="text-center">To Do List</h1>
+    <label class="h3">Task Title</label>
+    <input class="form-control" type="text" [(ngModel)]="name" />
+    <button class="btn btn-primary mt-3 mb-3 btn-lg" (click)="onAdd()">Add To Do</button>
+  </div>
+  <div>
+    <ul class="list-group">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center mt-2 text-primary"
+        *ngFor="let todo of todos; trackBy: trackByIndex"
+      >
+        {{ todo.title }}
+
+        <button class="btn btn-danger" (click)="onRemove(todo)">Remove</button>
+      </li>
+    </ul>
+  </div>
+</div>
